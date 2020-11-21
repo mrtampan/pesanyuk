@@ -1,0 +1,9 @@
+stages:
+  - deploy
+deploy:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - if [ "$CI_COMMIT_REF_NAME" == "master" ] ; then cp -r /home/gitlab-runner/builds/1YJoHaY_/0/marfinohamzah455/pesanyuk.test/* /var/www/html/pesanyuk.xyz; fi
+    - if [ "$CI_COMMIT_REF_NAME" == "master" ] ; then cp -r /home/gitlab-runner/builds/1YJoHaY_/0/marfinohamzah455/pesanyuk.test/. /var/www/html/pesanyuk.xyz; fi
